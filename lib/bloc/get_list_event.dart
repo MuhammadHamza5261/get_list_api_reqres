@@ -1,3 +1,5 @@
 abstract class GetListEvent{}
 
-class GetListDataEvent extends GetListEvent{}
+class GetListDataEvent extends GetListEvent{
+
+}

@@ -8,8 +8,10 @@ class GetListInitialState extends GetListState{}
 
 class GetListInProgressState extends GetListState{}
 
+
 class GetListDataIsLoadedState extends GetListState{
 
+  // initialize the model
   GetApiModel? getApiModel;
   GetListDataIsLoadedState({required this.getApiModel});
 

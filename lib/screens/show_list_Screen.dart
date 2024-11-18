@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get_list_api/bloc/get_list_bloc.dart';
 import 'package:get_list_api/bloc/get_list_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../bloc/get_list_event.dart';
 
 
@@ -13,19 +12,15 @@ class ShowListScreen extends StatefulWidget {
   State<ShowListScreen> createState() => _ShowListScreenState();
 }
 
+
 class _ShowListScreenState extends State<ShowListScreen> {
 
+   @override
+   void initState() {
 
-@override
-  void initState() {
-
-  BlocProvider.of<GetListBloc>(context).add(GetListDataEvent());
-
+    BlocProvider.of<GetListBloc>(context).add(GetListDataEvent());
 
   }
-
-
-
 
 
   @override

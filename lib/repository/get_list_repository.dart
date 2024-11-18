@@ -13,7 +13,7 @@ class GetListRepository{
   //    create a repository method
 
   Future<GetApiModel?> getListRepository() async{
-
+     // set the data
      getApiModel = await getListService.getListMethod();
      return getApiModel!;
 
