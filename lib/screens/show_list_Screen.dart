@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get_list_api/bloc/get_list_bloc.dart';
 import 'package:get_list_api/bloc/get_list_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../bloc/get_list_event.dart';
 
 
@@ -18,6 +18,7 @@ class _ShowListScreenState extends State<ShowListScreen> {
 
 @override
   void initState() {
+
 
   BlocProvider.of<GetListBloc>(context).add(GetListDataEvent());
 
@@ -48,7 +49,9 @@ class _ShowListScreenState extends State<ShowListScreen> {
           builder: (context,state){
             return state is GetListInProgressState ?
                 const Center(
-                   child: CircularProgressIndicator(),
+                   child: SpinKitFadingCircle(
+                     color: Colors.orangeAccent,
+                   )
                 ):
                 state is GetListDataIsLoadedState ?
               SingleChildScrollView(
@@ -84,7 +87,7 @@ class _ShowListScreenState extends State<ShowListScreen> {
                   ],
                 ),
 
-              ):SizedBox();
+              ): const SizedBox();
 
           }
 
